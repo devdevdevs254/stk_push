@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: subscription-app
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: MPESA_SHORTCODE
+        value: YOUR_SHORTCODE
+      - key: MPESA_PASSKEY
+        value: YOUR_PASSKEY
+      - key: MPESA_CONSUMER_KEY
+        value: YOUR_KEY
+      - key: MPESA_CONSUMER_SECRET
+        value: YOUR_SECRET
+      - key: MPESA_CALLBACK_URL
+        value: https://subscription-app.onrender.com/callback
+      - key: AT_USERNAME
+        value: sandbox
+      - key: AT_API_KEY
+        value: YOUR_AFRICAS_TALKING_KEY
