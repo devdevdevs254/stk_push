@@ -5,6 +5,9 @@ load_dotenv()
 africastalking.initialize(os.getenv("AT_USERNAME"), os.getenv("AT_API_KEY"))
 sms = africastalking.SMS
 
+def send_bulk_sms(phone: list, message: str):
+    return sms.send(message, phones)
+    
 def send_sms(phone, mesage):
     try:
         response = sms.send(message, [phone])
